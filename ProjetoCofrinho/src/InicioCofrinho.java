@@ -7,6 +7,7 @@ import entidades.Moeda;
 import entidades.Real;
 
 public class InicioCofrinho {
+	// Testando branch
 
 	public static void main(String[] args) {
 		Cofrinho cofrinho = new Cofrinho();
