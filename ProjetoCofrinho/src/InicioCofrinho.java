@@ -10,6 +10,7 @@ public class InicioCofrinho {
 
 	public static void main(String[] args) {
 		Cofrinho cofrinho = new Cofrinho();
+		new Cofrinho("Bem vindo ao cofrinho");
 		
 		Scanner leitor;
 		

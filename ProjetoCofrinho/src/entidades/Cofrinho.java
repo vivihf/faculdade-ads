@@ -10,6 +10,10 @@ public class Cofrinho {
 		this.listaMoedas = new ArrayList<Moeda>();
 	}
 	
+	public Cofrinho(String mensagem) {
+		System.out.println(mensagem);
+	}
+	
 	public void adicionar(Moeda moeda) {
 		this.listaMoedas.add(moeda);
 	}
