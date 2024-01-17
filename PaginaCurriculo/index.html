@@ -1,0 +1,196 @@
+<html>
+    <!-- site: https://vivi-web.000webhostapp.com/ -->
+    <head>
+
+    </head>
+
+    <!-- Criei um JS para esconder e mostrar as seções do site -->
+    <script type="text/javascript">
+        function mostrar(idSecao) {
+            var secoes = document.getElementsByClassName("secao");
+
+            //Esconde todas as seções antes de mostrar a seção clicada
+            for (let index = 0; index < secoes.length; index++) {
+                secoes[index].style.display = "none";
+            }
+
+            var secaoMostrar = document.getElementById(idSecao);
+            secaoMostrar.style.display = "block";
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: rgba(248, 216, 216, 0.678);
+        }
+
+        .conteudo {
+            width: 80%;
+            margin-left: 10%;
+            outline: solid 1px black;
+            border-radius: 5px;
+            background-color: white;
+            min-height: 500px;
+            padding: 20px 10px 20px 10px;
+        }
+
+        /* Para centralizar a div */
+        .menu {
+            display: flex;
+            justify-content: center;
+        }
+
+        .menubar {
+            list-style-type: none;
+        }
+
+        /* pega todos os elementos li para adicionar o estilo */
+        .menubar > li {
+            display: inline;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-align: center;
+            background-color: rgb(255, 74, 74);
+        }
+
+        /* cor diferente quando colocar o mouse em cima do elemento */
+        .menubar > li:hover {
+            background-color: rgb(161, 61, 255);
+            
+        }
+
+        .menulink {
+            text-decoration: none;
+            color: white
+        }
+
+        .imagem-media {
+            height: 350px;
+        }
+
+        .formulario {
+            display: flex;
+            justify-content: center;
+        }
+
+        .botao-enviar {
+            background-color: rgb(255, 74, 74);
+            color: white;
+            border: none;
+            width: 80px;
+            height: 25px;
+        }
+
+        .botao-enviar:hover {
+            background-color: rgb(161, 61, 255);
+        }
+    </style>
+
+    <body>
+        <!-- div de menu -->
+        <div class="menu">
+            <ul class="menubar">
+                <li>
+                    <!-- link para chamar o JS -->
+                    <a onclick="mostrar('sobre')" href="javascript:void(0);" class="menulink">
+                        Sobre Mim
+                    </a>
+                </li>
+
+                <li>
+                    <a onclick="mostrar('formacao')" href="javascript:void(0);" class="menulink">
+                        Formação
+                    </a>
+                </li>
+
+                <li>
+                    <a onclick="mostrar('portifolio')" href="javascript:void(0);" class="menulink">
+                        Portifólio
+                    </a>
+                </li>
+
+                <li>
+                    <a onclick="mostrar('contato')" href="javascript:void(0);" class="menulink">
+                        Contato
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- div de conteudo -->
+        <div class="conteudo">
+            <!-- divs com id para mostrar/esconder com o JS -->
+            <div id="sobre" class="secao" style="display: block;">
+                <p>
+                    Oi, sou Viviane!<br/>
+                    <br/>
+                    Tenho 26 anos, sou estudante de tecnologia e pós graduada em Fisioterapia Cardiorespiratória.<br/>
+                    <br/>
+                    Sou apaixonada por cachorrinhos e tenho uma filhotinha chamada Athena.<br/>
+                    <br/>
+                    Durante meus tempos livres, gosto de:
+                    <ul>
+                        <li>Passear com a Athena</li>
+                        <li>Ir à academia</li>
+                        <li>Fazer aulas de luta</li>
+                        <li>e jogar video games</li>
+                    </ul>
+                    Dos jogos que mais gosto, prefiro os de terror e história, como o Resident Evil e The Last of Us.
+                </p>
+            </div>
+
+            <div id="formacao" class="secao" style="display: none;">
+                <p>
+                    Graduações concluídas:
+                    <ul>
+                        <li>Graduação em Fisioterapia - UNIP</li>
+                        <li>Pós-Graduação em Fisioterapia Cardiorespiratória e UTI Adulto - PUC-GO</li>
+                    </ul>
+
+                    Graduações em andamento:
+                    <ul>
+                        <li>Análise e Desenvolvimento de Sistemas - UNINTER</li>
+                    </ul>
+
+                    Línguas:
+                    <ul>
+                        <li>Inglês - Nível Básico</li>
+                        <li>Espanhol - Nível Básico</li>
+                    </ul>
+
+                </p>
+            </div>
+
+            <div id="portifolio" class="secao" style="display: none;">
+                <p>
+                    Análise, prototipação e estruturação de projeto: ADOTE.ME
+                </p>
+                <div>
+                    <img src="modelo-tela.jpg" class="imagem-media">
+                    <img src="modelo-db.jpg" class="imagem-media">
+                    <img src="diagrama-classes.jpg" class="imagem-media">
+                </div>
+
+                <p>
+                    Desenvolvimento JAVA para atividade de cofrinho digital
+                </p>
+                <div>
+                    <img src="codigo-java.jpg" class="imagem-media">
+                </div>
+            </div>
+
+            <div id="contato" class="secao" style="display: none;">
+                <div class="formulario">
+                    <!-- formulario sem ação por enquanto -->
+                    <form>
+                        <!-- usei placeholder para indicar o que deve ir no valor do input ao invés de colocar um label -->
+                        <input type="text" id="nome" style="display: block; width: 100%;" placeholder="Seu nome"/>
+                        <input type="email" id="email" style="display: block; width: 100%; margin-top: 10px;" placeholder="seu-email@provedor.com"/>
+                        <textarea id="mensagem" rows="5" cols="100" style="display: block; margin-top: 10px;" placeholder="Escreva sua mensagem"></textarea>
+                        <input type="button" value="Enviar" style="display: block; margin-top: 20px;" class="botao-enviar">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
